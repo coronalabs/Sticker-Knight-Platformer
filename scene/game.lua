@@ -5,7 +5,7 @@ local tiled = require "com.ponywolf.ponytiled"
 local physics = require "physics"
 local json = require "json"
 local scoring = require "scene.game.lib.score"
-local hearts = require "scene.game.lib.heartBar"
+local heartBar = require "scene.game.lib.heartBar"
 
 -- Variables local to scene
 local scene = composer.newScene()
@@ -64,7 +64,7 @@ function scene:create( event )
   score.y = display.screenOriginY + score.contentHeight / 2 + 16
 
   -- add our hearts module
-  shield = hearts.new()
+  shield = heartBar.new()
   shield.x = 48
   shield.y = display.screenOriginY + shield.contentHeight / 2 + 16  
   hero.shield = shield

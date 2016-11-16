@@ -40,7 +40,7 @@ application = {
 --    "adaptive" — instead of a static content area, a dynamic content width and height is chosen based on the device.
 --    "zoomStretch" — scales the content area to fill the entire screen.   
 
-    scale = "letterBox",
+    scale = "letterbox",
 
 --    If you need to align the content area to a particular edge of the screen, you can use
 --    the xAlign and yAlign values.       

@@ -14,14 +14,16 @@ https://docs.coronalabs.com/api/library/composer/index.html
 
 local composer = require( "composer" )
 
- -- Removes status bar on iOS
+-- Removes status bar on iOS
 display.setStatusBar( display.HiddenStatusBar ) 
 
 -- Removes bottom bar on Android 
-if system.getInfo( "androidApiLevel" ) and system.getInfo( "androidApiLevel" ) < 19 then
-	native.setProperty( "androidSystemUiVisibility", "lowProfile" )
-else
-	native.setProperty( "androidSystemUiVisibility", "immersiveSticky" ) 
+if system.getInfo("platformName"):find("droid")then 
+	if (system.getInfo( "androidApiLevel" ) or 0) < 19 then
+		native.setProperty( "androidSystemUiVisibility", "lowProfile" )
+	else
+		native.setProperty( "androidSystemUiVisibility", "immersiveSticky" ) 
+	end
 end
 
 -- are we running on a simulator?
@@ -30,7 +32,7 @@ local isSimulator = "simulator" == system.getInfo( "environment" )
 -- if we are load our visual monitor that let's a press of the "F"
 -- key show our frame rate and memory usage
 if isSimulator then 
-	
+
 	-- show FPS
 	local visualMonitor = require( "com.ponywolf.visualMonitor" )
 	local visMon = visualMonitor:new()

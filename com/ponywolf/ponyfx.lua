@@ -54,7 +54,7 @@ function M.screenFlash(color, blendMode, time)
 end
 
 function M.fadeOut(onComplete, time, delay)
-  local color = color or { 0, 0, 0, 1 }
+  local color = { 0, 0, 0, 1 }
   local overlay = display.newRect(
     display.contentCenterX,
     display.contentCenterY,
@@ -70,7 +70,7 @@ function M.fadeOut(onComplete, time, delay)
 end
 
 function M.fadeIn(onComplete, time, delay)
-  local color = color or { 0, 0, 0, 1 }
+  local color = { 0, 0, 0, 1 }
   local overlay = display.newRect(
     display.contentCenterX,
     display.contentCenterY,
