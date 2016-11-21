@@ -18,50 +18,58 @@ local composer = require( "composer" )
 display.setStatusBar( display.HiddenStatusBar ) 
 
 -- Removes bottom bar on Android 
-if system.getInfo("platformName"):find("droid")then 
-	if (system.getInfo( "androidApiLevel" ) or 0) < 19 then
-		native.setProperty( "androidSystemUiVisibility", "lowProfile" )
-	else
-		native.setProperty( "androidSystemUiVisibility", "immersiveSticky" ) 
-	end
+if system.getInfo( "androidApiLevel" ) and system.getInfo( "androidApiLevel" ) < 19 then
+  native.setProperty( "androidSystemUiVisibility", "lowProfile" )
+else
+  native.setProperty( "androidSystemUiVisibility", "immersiveSticky" ) 
 end
 
 -- are we running on a simulator?
 local isSimulator = "simulator" == system.getInfo( "environment" )
+local isMobile = ("ios" == system.getInfo("platform")) or ("android" == system.getInfo("platform"))
 
 -- if we are load our visual monitor that let's a press of the "F"
--- key show our frame rate and memory usage
+-- key show our frame rate and memory usage, "P" to show physics
 if isSimulator then 
 
-	-- show FPS
-	local visualMonitor = require( "com.ponywolf.visualMonitor" )
-	local visMon = visualMonitor:new()
-	visMon.isVisible = false
+  -- show FPS
+  local visualMonitor = require( "com.ponywolf.visualMonitor" )
+  local visMon = visualMonitor:new()
+  visMon.isVisible = false
 
-	-- show/hide physics
-	local function debugKeys( event )
-		local phase = event.phase
-		local key = event.keyName
-		if phase == "up" then
-			if key == "p" then
-				physics.show = not physics.show
-				if physics.show then 
-					physics.setDrawMode( "hybrid" ) 
-				else
-					physics.setDrawMode( "normal" )  
-				end
-			elseif key == "f" then
-				visMon.isVisible = not visMon.isVisible 
-			end
-		end
-	end
-	Runtime:addEventListener( "key", debugKeys )
+  -- show/hide physics
+  local function debugKeys( event )
+    local phase = event.phase
+    local key = event.keyName
+    if phase == "up" then
+      if key == "p" then
+        physics.show = not physics.show
+        if physics.show then 
+          physics.setDrawMode( "hybrid" ) 
+        else
+          physics.setDrawMode( "normal" )  
+        end
+      elseif key == "f" then
+        visMon.isVisible = not visMon.isVisible 
+      end
+    end
+  end
+  Runtime:addEventListener( "key", debugKeys )
 end
 
 -- this module turns gamepad axis events and mobile accelometer events
 -- into keyboard events so we don't have to write separate code 
--- for joystick, tilt and keyboard control
+-- for joystick and keyboard control
 require("com.ponywolf.joykey").start()
+
+-- add virtual joysticks to mobile 
+if isMobile or isSimulator then
+  local vjoy = require "com.ponywolf.vjoy"
+  local stick = vjoy.newStick()
+  stick.x, stick.y = 128, display.contentHeight - 128
+  local button = vjoy.newButton()
+  button.x, button.y = display.contentWidth - 128, display.contentHeight - 128
+end
 
 -- go to menu screen
 composer.gotoScene( "scene.menu", { params={ } } )
