@@ -1,71 +1,70 @@
 --[[
 
-This is the main.lua file. It executes first and in this demo
-is sole purpose is to set some initial visual settings and
-then you execute our game or menu scene via composer.
+This is the main.lua file. It executes first and, in this demo,
+its sole purpose is to set some initial visual settings.
 
+Then, you execute the game or menu scene via Composer.
 Composer is the official scene (screen) creation and management
-library in Corona SDK. This library provides developers with an
+library in Corona; it provides developers with an
 easy way to create and transition between individual scenes.
 
-https://docs.coronalabs.com/api/library/composer/index.html 
+See the Composer Library guide for details:
+https://docs.coronalabs.com/guide/system/composer/index.html
 
--- ]]
+--]]
 
+-- Include the Composer library
 local composer = require( "composer" )
 
 -- Removes status bar on iOS
+-- https://docs.coronalabs.com/api/library/display/setStatusBar.html
 display.setStatusBar( display.HiddenStatusBar ) 
 
 -- Removes bottom bar on Android 
-if system.getInfo("platformName"):find("droid")then 
-	if (system.getInfo( "androidApiLevel" ) or 0) < 19 then
+if system.getInfo( "platformName" ):find( "droid" ) then
+	if ( system.getInfo( "androidApiLevel" ) or 0 ) < 19 then
 		native.setProperty( "androidSystemUiVisibility", "lowProfile" )
 	else
 		native.setProperty( "androidSystemUiVisibility", "immersiveSticky" ) 
 	end
 end
 
--- are we running on a simulator?
+-- Are we running on the Corona Simulator?
+-- https://docs.coronalabs.com/api/library/system/getInfo.html
 local isSimulator = "simulator" == system.getInfo( "environment" )
 
--- if we are load our visual monitor that let's a press of the "F"
--- key show our frame rate and memory usage
+-- If we are running in the Corona Simulator, enable debugging keys
+-- "F" key shows a visual monitor of our frame rate and memory usage
 if isSimulator then 
 
-	-- show FPS
+	-- Show FPS
 	local visualMonitor = require( "com.ponywolf.visualMonitor" )
 	local visMon = visualMonitor:new()
 	visMon.isVisible = false
 
-	-- show/hide physics
 	local function debugKeys( event )
 		local phase = event.phase
 		local key = event.keyName
 		if phase == "up" then
-			if key == "p" then
-				physics.show = not physics.show
-				if physics.show then 
-					physics.setDrawMode( "hybrid" ) 
-				else
-					physics.setDrawMode( "normal" )  
-				end
-			elseif key == "f" then
+			if key == "f" then
 				visMon.isVisible = not visMon.isVisible 
 			end
 		end
 	end
+	-- Listen for key events in Runtime
+	-- See the "key" event documentation for more details:
+	-- https://docs.coronalabs.com/api/event/key/index.html
 	Runtime:addEventListener( "key", debugKeys )
 end
 
--- this module turns gamepad axis events and mobile accelometer events
--- into keyboard events so we don't have to write separate code 
--- for joystick, tilt and keyboard control
-require("com.ponywolf.joykey").start()
+-- This module turns gamepad axis events and mobile accelerometer events into keyboard
+-- events so we don't have to write separate code for joystick, tilt, and keyboard control
+require( "com.ponywolf.joykey" ).start()
 
--- go to menu screen
-composer.gotoScene( "scene.menu", { params={ } } )
+-- Go to menu screen
+-- https://docs.coronalabs.com/api/library/composer/gotoScene.html
+composer.gotoScene( "scene.menu", { params={} } )
 
--- or cheat to a specific level, just uncomment the next line and pass it 
--- the json file of the level you want to jump to
---composer.gotoScene( "scene.game", { params={ map = "scene/game/map/sandbox2.json"} } )
+-- Or, instead of the line above, you can cheat skip to a specific level by using the
+-- following line, passing to it the JSON file of the level you want to jump to
+-- composer.gotoScene( "scene.game", { params={ map="scene/game/map/sandbox2.json" } } )

@@ -1,13 +1,15 @@
 --
--- For more information on build.settings see the Corona SDK Build Guide at:
+-- For more information on build.settings, see the Project Build Settings guide:
 -- http://docs.coronalabs.com/guide/distribution/buildSettings/index.html
 --
 
 settings = {
 
+	-- Use the "orientation" table to set the default and supported device orientations
+	-- Acceptable values are "portrait", "portraitUpsideDown", "landscapeRight", or "landscapeLeft"
 	orientation = {
 		default = "landscapeRight",
-		supported = { "landscapeRight"}
+		supported = { "landscapeRight" }
 	},
 
 	android =
@@ -55,7 +57,7 @@ settings = {
 	window = {
 		titleText = {
 			-- The "default" text will be used if the system is using a language and/or
-			-- country code not defined below. This serves as a fallback mechanism.
+			-- country code not defined. This serves as a fallback mechanism.
 			default = "Skeleton",
 		},
 	},
@@ -66,7 +68,7 @@ settings = {
 	},
 
 	--  Files to be excluded are specified per-platform (iOS, Android, or all) using simple pattern
-	--  matching where * means any string of characters, sometimes including /
+	--  matching where * means any string of characters, sometimes including /.
 	excludeFiles = {
 
 		-- On iOS, exclude all Android icon files and .ogg files
