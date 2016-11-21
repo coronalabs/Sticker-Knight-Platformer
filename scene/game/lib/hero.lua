@@ -42,20 +42,19 @@ function M.new( instance, options )
 	-- Keyboard control
 	local max, acceleration, left, right, flip = 375, 5000, 0, 0, 0
 	local lastEvent = {}
-	
 	local function key( event )
 		local phase = event.phase
 		local name = event.keyName
-		if ( phase == lastEvent.phase ) and ( name == lastEvent.keyName ) then return false end
+		if ( phase == lastEvent.phase ) and ( name == lastEvent.keyName ) then return false end  -- Filter repeating keys
 		if phase == "down" then
-			if "left" == name or "axis1-" == name or "axis3-" == name or "axisY-" == name then
+			if "left" == name or "a" == name then
 				left = -acceleration
 				flip = -0.133
 			end
-			if "right" == name or "axis1+" == name or "axis3+" == name or "axisY+" == name then
+			if "right" == name or "d" == name then
 				right = acceleration
 				flip = 0.133
-			elseif "space" == name or "buttonA" == name or "button1" == name or "screen" == name then
+			elseif "space" == name or "buttonA" == name or "button1" == name then
 				instance:jump()
 			end
 			if not ( left == 0 and right == 0 ) and not instance.jumping then
@@ -63,46 +62,22 @@ function M.new( instance, options )
 				instance:play()
 			end
 		elseif phase == "up" then
-			if "left" == name or "axis1-" == name or "axis3-" == name then left = 0 end
-			if "right" == name or "axis1+" == name or "axis3+" == name then right = 0 end
+			if "left" == name or "a" == name then left = 0 end
+			if "right" == name or "d" == name then right = 0 end
 			if left == 0 and right == 0 and not instance.jumping then
-				instance:setSequence( "idle" )
+				instance:setSequence("idle")
 			end
 		end
 		lastEvent = event
 	end
 
-  -- keyboard control
-  local max, acceleration, left, right, flip = 375, 5000, 0, 0, 0
-  local lastEvent = {}
-  local function key(event)
-    local phase = event.phase
-    local name = event.keyName
-    if (phase == lastEvent.phase) and (name == lastEvent.keyName) then return false end -- filter repeating keys
-    if phase == "down" then
-      if "left" == name or "a" == name then 
-        left = -acceleration
-        flip = -0.133
-      end
-      if "right" == name or "d" == name then 
-        right = acceleration
-        flip = 0.133
-      elseif "space" == name or "buttonA" == name or "button1" == name then
-        instance:jump()
-      end
-      if not (left == 0 and right == 0) and not instance.jumping then
-        instance:setSequence("walk")
-        instance:play()
-      end    
-    elseif phase == "up" then
-      if "left" == name or "a" == name then left = 0 end
-      if "right" == name or "d" == name then right = 0 end
-      if left == 0 and right == 0 and not instance.jumping then
-        instance:setSequence("idle")
-      end
-    end
-    lastEvent = event
-  end
+	function instance:jump()
+		if not self.jumping then
+			self:applyLinearImpulse( 0, -550 )
+			instance:setSequence( "jump" )
+			self.jumping = true
+		end
+	end
 
 	function instance:hurt()
 		fx.flash( self )
