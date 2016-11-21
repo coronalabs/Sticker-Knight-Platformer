@@ -46,8 +46,7 @@ function M.new(instance, options)
   local function key(event)
     local phase = event.phase
     local name = event.keyName
-    print (phase, name)
-    if (phase == lastEvent.phase) and (name == lastEvent.keyName) then return false end
+    if (phase == lastEvent.phase) and (name == lastEvent.keyName) then return false end -- filter repeating keys
     if phase == "down" then
       if "left" == name or "a" == name then 
         left = -acceleration

@@ -1,13 +1,13 @@
 
 -- Project: vjoy 0.3
 --
--- Date: Mar 3, 2015
--- Updated: Nov 21, 2016
+-- A virtual joystick and button system that emulates
+-- an xBox controller axis/button events
 
 local M = {}
 local stage = display.getCurrentStage()
 
-function M.newButton(radius, key)
+function M.newButton(key, radius)
 
   local instance
   radius = radius or 64
@@ -26,27 +26,27 @@ function M.newButton(radius, key)
     local phase = event.phase
     if phase=="began" then
       if event.id then stage:setFocus(event.target, event.id) end
-      instance.xScale, instance.yScale = 0.95, 0.95
+      self.xScale, self.yScale = 0.95, 0.95
       local keyEvent = {name = "key", phase = "down", keyName = key or "none"}
       Runtime:dispatchEvent(keyEvent)
     elseif phase=="ended" or phase == "canceled" then
       if event.id then stage:setFocus(nil, event.id) end
-      instance.xScale, instance.yScale = 1, 1
+      self.xScale, self.yScale = 1, 1
       local keyEvent = {name = "key", phase = "up", keyName = key or "none"}
       Runtime:dispatchEvent(keyEvent)
     end
     return true
   end
 
-  function instance:activate()
-    self:addEventListener("touch")
+  function instance.activate()
+    instance:addEventListener("touch")
   end
 
-  function instance:deactivate()
-    self:removeEventListener("touch")
+  function instance.deactivate()
+    instance:removeEventListener("touch")
   end
 
-  instance:activate()
+  instance.activate()
   return instance
 end
 
