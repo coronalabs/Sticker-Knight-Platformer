@@ -72,13 +72,37 @@ function M.new( instance, options )
 		lastEvent = event
 	end
 
-	function instance:jump()
-		if not self.jumping then
-			self:applyLinearImpulse( 0, -550 )
-			instance:setSequence( "jump" )
-			self.jumping = true
-		end
-	end
+  -- keyboard control
+  local max, acceleration, left, right, flip = 375, 5000, 0, 0, 0
+  local lastEvent = {}
+  local function key(event)
+    local phase = event.phase
+    local name = event.keyName
+    if (phase == lastEvent.phase) and (name == lastEvent.keyName) then return false end -- filter repeating keys
+    if phase == "down" then
+      if "left" == name or "a" == name then 
+        left = -acceleration
+        flip = -0.133
+      end
+      if "right" == name or "d" == name then 
+        right = acceleration
+        flip = 0.133
+      elseif "space" == name or "buttonA" == name or "button1" == name then
+        instance:jump()
+      end
+      if not (left == 0 and right == 0) and not instance.jumping then
+        instance:setSequence("walk")
+        instance:play()
+      end    
+    elseif phase == "up" then
+      if "left" == name or "a" == name then left = 0 end
+      if "right" == name or "d" == name then right = 0 end
+      if left == 0 and right == 0 and not instance.jumping then
+        instance:setSequence("idle")
+      end
+    end
+    lastEvent = event
+  end
 
 	function instance:hurt()
 		fx.flash( self )
