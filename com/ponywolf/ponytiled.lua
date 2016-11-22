@@ -90,7 +90,7 @@ function M.new( data, dir )
 			end
 		end
 		print ( "LOADED:", tileset.image )
-		return graphics.newImageSheet( tileset.image, options )
+		return graphics.newImageSheet( dir .. tileset.image, options )
 	end
 
 	local function gidLookup( gid )
@@ -216,6 +216,9 @@ function M.new( data, dir )
 					end
 					-- Simple physics
 					if object.properties.bodyType then
+						if (not object.properties.bodyType == "static") and object.polyline then
+							print("WARNING: "dynamic" bodyType not supported for polylines."
+						end
 						physics.addBody( polygon, object.properties.bodyType, object.properties )
 					end
 					-- Apply custom properties
@@ -345,7 +348,14 @@ function M.new( data, dir )
 
 	-- Set the background color to the map background
 	if data.backgroundcolor then
-		display.setDefault( "background", decodeTiledColor( "FF" .. data.backgroundcolor ) )
+		if type(data.backgroundcolor) == "table" then
+			for i = 1, #data.backgroundcolor do
+				data.backgroundcolor[i] = data.backgroundcolor[i] / 255
+			end
+			display.setDefault( "background", unpack( data.backgroundcolor ) )
+		else
+			display.setDefault( "background", decodeTiledColor( "FF" .. data.backgroundcolor ) )
+		end
 	end
 
 	return map
