@@ -6,10 +6,21 @@ local tiled = require( "com.ponywolf.ponytiled" )
 local json = require( "json" )
 
 -- Variables local to scene
-local ui, music, sword
+local ui, music, start
 
 -- Create a new Composer scene
 local scene = composer.newScene()
+
+local function key(event)
+	-- go back to menu if we are not already there
+	if event.phase == "up" and event.keyName == "escape" then
+		if not (composer.getSceneName("current") == "scene.menu") then
+			fx.fadeOut(function ()
+					composer.gotoScene("scene.menu")
+				end)
+		end
+	end
+end
 
 -- This function is called when scene is created
 function scene:create( event )
@@ -25,14 +36,13 @@ function scene:create( event )
 	ui.x, ui.y = display.contentCenterX - ui.designedWidth/2, display.contentCenterY - ui.designedHeight/2
 
 	-- Find the start button
-	local start = ui:findObject( "start" )
+	start = ui:findObject( "start" )
 	function start:tap()
 		fx.fadeOut( function()
-			composer.gotoScene( "scene.game", { params = {} } )
-		end )
+				composer.gotoScene( "scene.game", { params = {} } )
+			end )
 	end
 	fx.breath( start )
-	start:addEventListener( "tap" )
 
 	-- Find the help button
 	local help = ui:findObject( "help" )
@@ -40,7 +50,7 @@ function scene:create( event )
 		ui:findLayer( "help" ).isVisible = not ui:findLayer( "help" ).isVisible
 	end
 	help:addEventListener( "tap" )
-  
+
 	-- Transtion in logo
 	transition.from( ui:findObject( "logo" ), { xScale = 2.5, yScale = 2.5, time = 333, transition = easing.outQuad } )
 
@@ -50,11 +60,14 @@ function scene:create( event )
 	ui:findLayer( "clouds" ):insert( streaks )
 
 	sceneGroup:insert( ui )
+
+	-- escape key
+	Runtime:addEventListener("key", key)
 end
 
 local function enterFrame( event )
 
-  local elapsed = event.time
+	local elapsed = event.time
 
 end
 
@@ -63,8 +76,10 @@ function scene:show( event )
 
 	local phase = event.phase
 	if ( phase == "will" ) then
+		fx.fadeIn()
 		Runtime:addEventListener( "enterFrame", enterFrame )
 	elseif ( phase == "did" ) then
+		start:addEventListener( "tap" )
 		audio.play( music, { loops = -1, fadein = 750, channel = 16 } )
 	end
 end
@@ -74,6 +89,7 @@ function scene:hide( event )
 
 	local phase = event.phase
 	if ( phase == "will" ) then
+		start:removeEventListener( "tap" )
 		audio.fadeOut( { channel = 16, time = 1500 } )
 	elseif ( phase == "did" ) then
 		Runtime:removeEventListener( "enterFrame", enterFrame )
@@ -82,9 +98,9 @@ end
 
 -- This function is called when scene is destroyed
 function scene:destroy( event )
-
 	audio.stop()  -- Stop all audio
 	audio.dispose( music )  -- Release music handle
+	Runtime:removeEventListener("key", key)
 end
 
 scene:addEventListener( "create" )

@@ -80,15 +80,13 @@ function scene:create( event )
 	sceneGroup:insert( gem )
 	sceneGroup:insert( shield )
 
-	-- Fade up from black
-	fx.fadeIn()
 end
 
 -- Function to scroll the map
 local function enterFrame( event )
 
 	local elapsed = event.time
-	
+
 	-- Easy way to scroll a map based on a character
 	if hero and hero.x and hero.y and not hero.isDead then
 		local x, y = hero:localToContent( 0, 0 )
@@ -106,6 +104,7 @@ function scene:show( event )
 
 	local phase = event.phase
 	if ( phase == "will" ) then
+		fx.fadeIn()	-- Fade up from black
 		Runtime:addEventListener( "enterFrame", enterFrame )
 	elseif ( phase == "did" ) then
 		-- Start playing wind sound
