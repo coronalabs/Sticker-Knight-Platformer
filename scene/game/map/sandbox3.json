@@ -580,7 +580,7 @@
                  "visible":true,
                  "width":160,
                  "x":544,
-                 "y":480
+                 "y":449.939393939395
                 }, 
                 {
                  "gid":8,
@@ -890,11 +890,13 @@
                  "properties":
                     {
                      "bodyType":"static",
+                     "floating":true,
                      "friction":"1.00"
                     },
                  "propertytypes":
                     {
                      "bodyType":"string",
+                     "floating":"bool",
                      "friction":"string"
                     },
                  "rotation":0,
@@ -902,7 +904,7 @@
                  "visible":true,
                  "width":256,
                  "x":384,
-                 "y":576
+                 "y":545.939393939394
                 }, 
                 {
                  "gid":33,
@@ -912,11 +914,13 @@
                  "properties":
                     {
                      "bodyType":"static",
+                     "floating":true,
                      "friction":"1.00"
                     },
                  "propertytypes":
                     {
                      "bodyType":"string",
+                     "floating":"bool",
                      "friction":"string"
                     },
                  "rotation":0,
@@ -924,7 +928,7 @@
                  "visible":true,
                  "width":256,
                  "x":608,
-                 "y":576
+                 "y":545.939393939394
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -1235,8 +1239,8 @@
                  "type":"",
                  "visible":true,
                  "width":96,
-                 "x":1408,
-                 "y":512
+                 "x":1417.09090909091,
+                 "y":505.939393939394
                 }, 
                 {
                  "gid":3,
@@ -1247,20 +1251,8 @@
                  "type":"blob",
                  "visible":true,
                  "width":96,
-                 "x":2491.27272727273,
-                 "y":-383.515151515152
-                }, 
-                {
-                 "gid":2,
-                 "height":64,
-                 "id":160,
-                 "name":"",
-                 "rotation":0,
-                 "type":"blob",
-                 "visible":true,
-                 "width":96,
-                 "x":1846,
-                 "y":-456.121212121212
+                 "x":767.030303030306,
+                 "y":444
                 }, 
                 {
                  "gid":2147483711,
