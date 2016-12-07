@@ -6,7 +6,7 @@ local tiled = require( "com.ponywolf.ponytiled" )
 local json = require( "json" )
 
 -- Variables local to scene
-local ui, music, start
+local ui, bgMusic, start
 
 -- Create a new Composer scene
 local scene = composer.newScene()
@@ -27,8 +27,8 @@ function scene:create( event )
 
 	local sceneGroup = self.view  -- Add scene display objects to this group
 
-	-- Music
-	music = audio.loadStream( "scene/menu/sfx/titletheme.wav" )
+		-- stream music
+		bgMusic = audio.loadStream( "scene/menu/sfx/titletheme.wav" )
 
 	-- Load our UI
 	local uiData = json.decodeFile( system.pathForFile( "scene/menu/ui/title.json", system.ResourceDirectory ) )
@@ -77,10 +77,12 @@ function scene:show( event )
 	local phase = event.phase
 	if ( phase == "will" ) then
 		fx.fadeIn()
+		-- add enterFrame listener
 		Runtime:addEventListener( "enterFrame", enterFrame )
 	elseif ( phase == "did" ) then
 		start:addEventListener( "tap" )
-		audio.play( music, { loops = -1, fadein = 750, channel = 1 } )
+		audio.play( bgMusic, { loops = -1, channel = 1 } )
+		audio.fade({ channel = 1, time = 333, volume = 1.0 } )	
 	end
 end
 
@@ -99,7 +101,7 @@ end
 -- This function is called when scene is destroyed
 function scene:destroy( event )
 	audio.stop()  -- Stop all audio
-	audio.dispose( music )  -- Release music handle
+	audio.dispose( bgMusic )  -- Release music handle
 	Runtime:removeEventListener("key", key)
 end
 

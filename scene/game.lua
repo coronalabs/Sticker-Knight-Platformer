@@ -74,6 +74,14 @@ function scene:create( event )
 	shield.y = display.screenOriginY + shield.contentHeight / 2 + 16
 	hero.shield = shield
 
+	-- Touch the sheilds to go back to the main...
+	function shield:tap(event)
+		fx.fadeOut( function()
+				composer.gotoScene( "scene.menu")
+			end )
+	end
+	shield:addEventListener("tap")
+
 	-- Insert our game items in the correct back-to-front order
 	sceneGroup:insert( map )
 	sceneGroup:insert( score )
