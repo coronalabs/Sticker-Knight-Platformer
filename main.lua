@@ -72,8 +72,6 @@ end
 
 -- reserve music channel
 audio.reserveChannels(1)
--- stream music
---bgMusic = audio.loadStream( "scene/menu/sfx/titletheme.wav" )
 
 -- go to menu screen
 composer.gotoScene( "scene.menu", { params={ } } )
