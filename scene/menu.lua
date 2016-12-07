@@ -80,7 +80,7 @@ function scene:show( event )
 		Runtime:addEventListener( "enterFrame", enterFrame )
 	elseif ( phase == "did" ) then
 		start:addEventListener( "tap" )
-		audio.play( music, { loops = -1, fadein = 750, channel = 16 } )
+		audio.play( music, { loops = -1, fadein = 750, channel = 1 } )
 	end
 end
 
@@ -90,7 +90,7 @@ function scene:hide( event )
 	local phase = event.phase
 	if ( phase == "will" ) then
 		start:removeEventListener( "tap" )
-		audio.fadeOut( { channel = 16, time = 1500 } )
+		audio.fadeOut( { channel = 1, time = 1500 } )
 	elseif ( phase == "did" ) then
 		Runtime:removeEventListener( "enterFrame", enterFrame )
 	end
