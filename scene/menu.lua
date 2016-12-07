@@ -27,8 +27,8 @@ function scene:create( event )
 
 	local sceneGroup = self.view  -- Add scene display objects to this group
 
-		-- stream music
-		bgMusic = audio.loadStream( "scene/menu/sfx/titletheme.wav" )
+	-- stream music
+	bgMusic = audio.loadStream( "scene/menu/sfx/titletheme.wav" )
 
 	-- Load our UI
 	local uiData = json.decodeFile( system.pathForFile( "scene/menu/ui/title.json", system.ResourceDirectory ) )
@@ -81,8 +81,10 @@ function scene:show( event )
 		Runtime:addEventListener( "enterFrame", enterFrame )
 	elseif ( phase == "did" ) then
 		start:addEventListener( "tap" )
-		audio.play( bgMusic, { loops = -1, channel = 1 } )
-		audio.fade({ channel = 1, time = 333, volume = 1.0 } )	
+		timer.performWithDelay( 10, function()
+			audio.play( bgMusic, { loops = -1, channel = 1 } )
+			audio.fade({ channel = 1, time = 333, volume = 1.0 } )
+		end)	
 	end
 end
 
