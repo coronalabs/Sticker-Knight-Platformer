@@ -26,7 +26,7 @@ function scene:create( event )
 		sword = audio.loadSound( sndDir .. "sword.wav" ),
 		squish = audio.loadSound( sndDir .. "squish.wav" ),
 		slime = audio.loadSound( sndDir .. "slime.wav" ),
-		wind = audio.loadSound( sndDir .. "loops/spacewind.ogg" ),
+		wind = audio.loadSound( sndDir .. "loops/spacewind.wav" ),
 		door = audio.loadSound( sndDir .. "door.wav" ),
 		hurt = {
 			audio.loadSound( sndDir .. "hurt1.wav" ),
