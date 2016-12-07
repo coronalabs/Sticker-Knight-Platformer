@@ -28,7 +28,7 @@ function scene:create( event )
 	local sceneGroup = self.view  -- Add scene display objects to this group
 
 	-- Music
-	music = audio.loadSound( "scene/menu/sfx/titletheme.wav" )
+	music = audio.loadStream( "scene/menu/sfx/titletheme.wav" )
 
 	-- Load our UI
 	local uiData = json.decodeFile( system.pathForFile( "scene/menu/ui/title.json", system.ResourceDirectory ) )

@@ -61,6 +61,7 @@ end
 require( "com.ponywolf.joykey" ).start()
 
 -- add virtual joysticks to mobile 
+system.activate("multitouch")
 if isMobile or isSimulator then
 	local vjoy = require( "com.ponywolf.vjoy" )
 	local stick = vjoy.newStick()
