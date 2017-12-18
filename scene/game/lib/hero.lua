@@ -74,7 +74,7 @@ function M.new( instance, options )
 	function instance:jump()
 		if not self.jumping then
 			self:applyLinearImpulse( 0, -550 )
-			instance:setSequence( "jump" )
+			self:setSequence( "jump" )
 			self.jumping = true
 		end
 	end
