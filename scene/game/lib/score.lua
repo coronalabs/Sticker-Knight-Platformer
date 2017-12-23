@@ -28,27 +28,27 @@ function M.new( options )
 	score:setFillColor( unpack(color) )
 
 	function score:add( points )
-		score.target = self.target + ( points or 10 )
+		self.target = self.target + ( points or 10 )
 		local function countUp()
-			local diff = math.ceil( ( score.target - score.num ) / 12 )
-			score.num = score.num + diff
-			if score.num > score.target then
-				score.num = score.target
-				timer.cancel( score.timer )
-				score.timer = nil
+			local diff = math.ceil( ( self.target - self.num ) / 12 )
+			self.num = self.num + diff
+			if self.num > self.target then
+				self.num = self.target
+				timer.cancel( self.timer )
+				self.timer = nil
 			end
-			score.text = label .. " " .. ( score.num or 0 )
+			self.text = label .. " " .. ( self.num or 0 )
 		end
-		if not score.timer then
-			score.timer = timer.performWithDelay( 30, countUp, -1 )
+		if not self.timer then
+			self.timer = timer.performWithDelay( 30, countUp, -1 )
 		end
 	end
   
-	function score:get() return score.target or 0 end
+	function score:get() return self.target or 0 end
 
 	function score:finalize()
 		-- On remove, cleanup instance
-		if score and score.timer then timer.cancel( score.timer ) end
+		if self and self.timer then timer.cancel( self.timer ) end
 	end
 
 	score:addEventListener( "finalize" )
