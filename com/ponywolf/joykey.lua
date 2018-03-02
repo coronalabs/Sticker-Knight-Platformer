@@ -34,6 +34,7 @@ local function axis( event )
 	local name = "axis" .. num
 	local value = event.normalizedValue
 	local oppositeAxis = "none"
+	event = event or {}
 
 	event.name = "key"  -- Overide event type
 
@@ -49,33 +50,35 @@ local function axis( event )
 		event.keyName = map[name .. "-"]
 		oppositeAxis = map[name .. "+"]
 	end
-
-	if math.abs(value) > deadZone then
-		-- Throw the opposite axis if it was last pressed
-		if eventCache[oppositeAxis] then
-			event.phase = "up"
-			eventCache[oppositeAxis] = false
-			event.keyName = oppositeAxis
-			Runtime:dispatchEvent( event )
-		end
-		-- Throw this axis if it wasn't last pressed
-		if not eventCache[event.keyName] then
-			event.phase = "down"
-			eventCache[event.keyName] = true
-			Runtime:dispatchEvent( event )
-		end
-	else
-		-- We're back toward center
-		if eventCache[event.keyName] then
-			event.phase = "up"
-			eventCache[event.keyName] = false
-			Runtime:dispatchEvent( event )
-		end
-		if eventCache[oppositeAxis] then
-			event.phase = "up"
-			eventCache[oppositeAxis] = false
-			event.keyName = oppositeAxis
-			Runtime:dispatchEvent( event )
+	
+	if event.keyName then 
+		if math.abs(value) > deadZone then
+			-- Throw the opposite axis if it was last pressed
+			if eventCache[oppositeAxis] then
+				event.phase = "up"
+				eventCache[oppositeAxis] = false
+				event.keyName = oppositeAxis
+				Runtime:dispatchEvent( event )
+			end
+			-- Throw this axis if it wasn't last pressed
+			if not eventCache[event.keyName] then
+				event.phase = "down"
+				eventCache[event.keyName] = true
+				Runtime:dispatchEvent( event )
+			end
+		else
+			-- We're back toward center
+			if eventCache[event.keyName] then
+				event.phase = "up"
+				eventCache[event.keyName] = false
+				Runtime:dispatchEvent( event )
+			end
+			if eventCache[oppositeAxis] then
+				event.phase = "up"
+				eventCache[oppositeAxis] = false
+				event.keyName = oppositeAxis
+				Runtime:dispatchEvent( event )
+			end
 		end
 	end
 	return true
