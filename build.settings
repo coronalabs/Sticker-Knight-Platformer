@@ -22,30 +22,11 @@ settings = {
     
 	iphone =
 	{
+		xcassets = "Images.xcassets",
 		plist =
 		{
-			UIStatusBarHidden = false,
-			--UIApplicationExitsOnSuspend = true,  -- Uncomment to quit app on suspend    
-			CFBundleIconFiles =
-			{
-				"Icon.png", 
-				"Icon@2x.png", 
-				"Icon-60.png",
-				"Icon-60@2x.png",
-				"Icon-60@3x.png",
-				"Icon-72.png", 
-				"Icon-72@2x.png",
-				"Icon-76.png",
-				"Icon-76@2x.png",
-				"Icon-167.png",
-				"Icon-Small.png", 
-				"Icon-Small@2x.png",
-				"Icon-Small@3x.png",
-				"Icon-Small-40.png",
-				"Icon-Small-40@2x.png",
-				"Icon-Small-50.png", 
-				"Icon-Small-50@2x.png",
-			},
+			UILaunchStoryboardName = "LaunchScreen",
+			ITSAppUsesNonExemptEncryption = false, -- This sample doesn't use custom encryption
 		},
 	},
 
@@ -58,7 +39,7 @@ settings = {
 		titleText = {
 			-- The "default" text will be used if the system is using a language and/or
 			-- country code not defined. This serves as a fallback mechanism.
-			default = "Skeleton",
+			default = "Sticker Knight",
 		},
 	},
 
@@ -71,19 +52,5 @@ settings = {
 	--  matching where * means any string of characters, sometimes including /.
 	excludeFiles = {
 
-		-- On iOS, exclude all Android icon files and .ogg files
-		iphone = { "Icon-*dpi.png", "*.ogg" },
-
-		-- On Android, exclude iOS "retina" image files and .aac files
-		android = { "Icon.png", "*@2x.png", "*.aac" },
-
-		-- On MacOS, exclude unnecessary assets from desktop apps
-		osx = { "Default*.png", "Icon*.png", "Icon*.ico", "Icon*.icns", "*.aac" },
-
-		-- On Windows, exclude unnecessary assets from desktop apps
-		win32 = { "Default*.png", "Icon*.png", "Icon*.ico", "Icon*.icns", "*.aac" },
-
-		-- On tvOS, exclude all Android icon files and .ogg files
-		tvos = { "Icon-*.png", "*.ogg" },
 	},
 }
