@@ -1,9 +1,18 @@
 { "backgroundcolor":"#35495e",
+ "compressionlevel":0,
+ "editorsettings":
+    {
+     "export":
+        {
+         "target":"."
+        }
+    },
  "height":31,
+ "infinite":false,
  "layers":[
         {
          "draworder":"topdown",
-         "height":40,
+         "id":1,
          "name":"background",
          "objects":[
                 {
@@ -213,13 +222,12 @@
          "opacity":1,
          "type":"objectgroup",
          "visible":true,
-         "width":80,
          "x":0,
          "y":0
         }, 
         {
          "draworder":"topdown",
-         "height":40,
+         "id":2,
          "name":"ground",
          "objects":[
                 {
@@ -227,18 +235,22 @@
                  "height":64,
                  "id":196,
                  "name":"",
-                 "properties":
-                    {
-                     "bodyType":"static",
-                     "floating":"true",
-                     "friction":"1.00"
-                    },
-                 "propertytypes":
-                    {
-                     "bodyType":"string",
-                     "floating":"string",
-                     "friction":"string"
-                    },
+                 "properties":[
+                        {
+                         "name":"bodyType",
+                         "type":"string",
+                         "value":"static"
+                        }, 
+                        {
+                         "name":"floating",
+                         "type":"string",
+                         "value":"true"
+                        }, 
+                        {
+                         "name":"friction",
+                         "type":"string",
+                         "value":"1.00"
+                        }],
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -251,18 +263,22 @@
                  "height":64,
                  "id":197,
                  "name":"",
-                 "properties":
-                    {
-                     "bodyType":"static",
-                     "floating":"true",
-                     "friction":"1.00"
-                    },
-                 "propertytypes":
-                    {
-                     "bodyType":"string",
-                     "floating":"string",
-                     "friction":"string"
-                    },
+                 "properties":[
+                        {
+                         "name":"bodyType",
+                         "type":"string",
+                         "value":"static"
+                        }, 
+                        {
+                         "name":"floating",
+                         "type":"string",
+                         "value":"true"
+                        }, 
+                        {
+                         "name":"friction",
+                         "type":"string",
+                         "value":"1.00"
+                        }],
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -275,18 +291,22 @@
                  "height":64,
                  "id":232,
                  "name":"",
-                 "properties":
-                    {
-                     "bodyType":"static",
-                     "floating":"true",
-                     "friction":"1.00"
-                    },
-                 "propertytypes":
-                    {
-                     "bodyType":"string",
-                     "floating":"string",
-                     "friction":"string"
-                    },
+                 "properties":[
+                        {
+                         "name":"bodyType",
+                         "type":"string",
+                         "value":"static"
+                        }, 
+                        {
+                         "name":"floating",
+                         "type":"string",
+                         "value":"true"
+                        }, 
+                        {
+                         "name":"friction",
+                         "type":"string",
+                         "value":"1.00"
+                        }],
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -299,18 +319,22 @@
                  "height":64,
                  "id":233,
                  "name":"",
-                 "properties":
-                    {
-                     "bodyType":"static",
-                     "floating":"true",
-                     "friction":"1.00"
-                    },
-                 "propertytypes":
-                    {
-                     "bodyType":"string",
-                     "floating":"string",
-                     "friction":"string"
-                    },
+                 "properties":[
+                        {
+                         "name":"bodyType",
+                         "type":"string",
+                         "value":"static"
+                        }, 
+                        {
+                         "name":"floating",
+                         "type":"string",
+                         "value":"true"
+                        }, 
+                        {
+                         "name":"friction",
+                         "type":"string",
+                         "value":"1.00"
+                        }],
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -347,16 +371,17 @@
                  "height":96,
                  "id":258,
                  "name":"",
-                 "properties":
-                    {
-                     "bodyType":"static",
-                     "friction":"1.00"
-                    },
-                 "propertytypes":
-                    {
-                     "bodyType":"string",
-                     "friction":"string"
-                    },
+                 "properties":[
+                        {
+                         "name":"bodyType",
+                         "type":"string",
+                         "value":"static"
+                        }, 
+                        {
+                         "name":"friction",
+                         "type":"string",
+                         "value":"1.00"
+                        }],
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -369,16 +394,17 @@
                  "height":96,
                  "id":259,
                  "name":"",
-                 "properties":
-                    {
-                     "bodyType":"static",
-                     "friction":"1.00"
-                    },
-                 "propertytypes":
-                    {
-                     "bodyType":"string",
-                     "friction":"string"
-                    },
+                 "properties":[
+                        {
+                         "name":"bodyType",
+                         "type":"string",
+                         "value":"static"
+                        }, 
+                        {
+                         "name":"friction",
+                         "type":"string",
+                         "value":"1.00"
+                        }],
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -391,16 +417,17 @@
                  "height":96,
                  "id":260,
                  "name":"",
-                 "properties":
-                    {
-                     "bodyType":"static",
-                     "friction":"1.00"
-                    },
-                 "propertytypes":
-                    {
-                     "bodyType":"string",
-                     "friction":"string"
-                    },
+                 "properties":[
+                        {
+                         "name":"bodyType",
+                         "type":"string",
+                         "value":"static"
+                        }, 
+                        {
+                         "name":"friction",
+                         "type":"string",
+                         "value":"1.00"
+                        }],
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -413,16 +440,17 @@
                  "height":96,
                  "id":261,
                  "name":"",
-                 "properties":
-                    {
-                     "bodyType":"static",
-                     "friction":"1.00"
-                    },
-                 "propertytypes":
-                    {
-                     "bodyType":"string",
-                     "friction":"string"
-                    },
+                 "properties":[
+                        {
+                         "name":"bodyType",
+                         "type":"string",
+                         "value":"static"
+                        }, 
+                        {
+                         "name":"friction",
+                         "type":"string",
+                         "value":"1.00"
+                        }],
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -435,16 +463,17 @@
                  "height":96,
                  "id":262,
                  "name":"",
-                 "properties":
-                    {
-                     "bodyType":"static",
-                     "friction":"1.00"
-                    },
-                 "propertytypes":
-                    {
-                     "bodyType":"string",
-                     "friction":"string"
-                    },
+                 "properties":[
+                        {
+                         "name":"bodyType",
+                         "type":"string",
+                         "value":"static"
+                        }, 
+                        {
+                         "name":"friction",
+                         "type":"string",
+                         "value":"1.00"
+                        }],
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -457,16 +486,17 @@
                  "height":96,
                  "id":263,
                  "name":"",
-                 "properties":
-                    {
-                     "bodyType":"static",
-                     "friction":"1.00"
-                    },
-                 "propertytypes":
-                    {
-                     "bodyType":"string",
-                     "friction":"string"
-                    },
+                 "properties":[
+                        {
+                         "name":"bodyType",
+                         "type":"string",
+                         "value":"static"
+                        }, 
+                        {
+                         "name":"friction",
+                         "type":"string",
+                         "value":"1.00"
+                        }],
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -479,16 +509,17 @@
                  "height":96,
                  "id":264,
                  "name":"",
-                 "properties":
-                    {
-                     "bodyType":"static",
-                     "friction":"1.00"
-                    },
-                 "propertytypes":
-                    {
-                     "bodyType":"string",
-                     "friction":"string"
-                    },
+                 "properties":[
+                        {
+                         "name":"bodyType",
+                         "type":"string",
+                         "value":"static"
+                        }, 
+                        {
+                         "name":"friction",
+                         "type":"string",
+                         "value":"1.00"
+                        }],
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -501,16 +532,17 @@
                  "height":96,
                  "id":265,
                  "name":"",
-                 "properties":
-                    {
-                     "bodyType":"static",
-                     "friction":"1.00"
-                    },
-                 "propertytypes":
-                    {
-                     "bodyType":"string",
-                     "friction":"string"
-                    },
+                 "properties":[
+                        {
+                         "name":"bodyType",
+                         "type":"string",
+                         "value":"static"
+                        }, 
+                        {
+                         "name":"friction",
+                         "type":"string",
+                         "value":"1.00"
+                        }],
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -523,16 +555,17 @@
                  "height":96,
                  "id":266,
                  "name":"",
-                 "properties":
-                    {
-                     "bodyType":"static",
-                     "friction":"1.00"
-                    },
-                 "propertytypes":
-                    {
-                     "bodyType":"string",
-                     "friction":"string"
-                    },
+                 "properties":[
+                        {
+                         "name":"bodyType",
+                         "type":"string",
+                         "value":"static"
+                        }, 
+                        {
+                         "name":"friction",
+                         "type":"string",
+                         "value":"1.00"
+                        }],
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -545,16 +578,17 @@
                  "height":96,
                  "id":267,
                  "name":"",
-                 "properties":
-                    {
-                     "bodyType":"static",
-                     "friction":"1.00"
-                    },
-                 "propertytypes":
-                    {
-                     "bodyType":"string",
-                     "friction":"string"
-                    },
+                 "properties":[
+                        {
+                         "name":"bodyType",
+                         "type":"string",
+                         "value":"static"
+                        }, 
+                        {
+                         "name":"friction",
+                         "type":"string",
+                         "value":"1.00"
+                        }],
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -567,14 +601,12 @@
                  "height":192,
                  "id":276,
                  "name":"",
-                 "properties":
-                    {
-                     "map":"scene\/game\/map\/sandbox4.json"
-                    },
-                 "propertytypes":
-                    {
-                     "map":"string"
-                    },
+                 "properties":[
+                        {
+                         "name":"map",
+                         "type":"string",
+                         "value":"scene\/game\/map\/sandbox4.json"
+                        }],
                  "rotation":0,
                  "type":"exit",
                  "visible":true,
@@ -599,18 +631,22 @@
                  "height":96,
                  "id":343,
                  "name":"",
-                 "properties":
-                    {
-                     "bodyType":"static",
-                     "floating":"",
-                     "friction":"1.00"
-                    },
-                 "propertytypes":
-                    {
-                     "bodyType":"string",
-                     "floating":"string",
-                     "friction":"string"
-                    },
+                 "properties":[
+                        {
+                         "name":"bodyType",
+                         "type":"string",
+                         "value":"static"
+                        }, 
+                        {
+                         "name":"floating",
+                         "type":"string",
+                         "value":""
+                        }, 
+                        {
+                         "name":"friction",
+                         "type":"string",
+                         "value":"1.00"
+                        }],
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -623,18 +659,22 @@
                  "height":96,
                  "id":344,
                  "name":"",
-                 "properties":
-                    {
-                     "bodyType":"static",
-                     "floating":"false",
-                     "friction":"1.00"
-                    },
-                 "propertytypes":
-                    {
-                     "bodyType":"string",
-                     "floating":"string",
-                     "friction":"string"
-                    },
+                 "properties":[
+                        {
+                         "name":"bodyType",
+                         "type":"string",
+                         "value":"static"
+                        }, 
+                        {
+                         "name":"floating",
+                         "type":"string",
+                         "value":"false"
+                        }, 
+                        {
+                         "name":"friction",
+                         "type":"string",
+                         "value":"1.00"
+                        }],
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -647,18 +687,22 @@
                  "height":96,
                  "id":345,
                  "name":"",
-                 "properties":
-                    {
-                     "bodyType":"static",
-                     "floating":"false",
-                     "friction":"1.00"
-                    },
-                 "propertytypes":
-                    {
-                     "bodyType":"string",
-                     "floating":"string",
-                     "friction":"string"
-                    },
+                 "properties":[
+                        {
+                         "name":"bodyType",
+                         "type":"string",
+                         "value":"static"
+                        }, 
+                        {
+                         "name":"floating",
+                         "type":"string",
+                         "value":"false"
+                        }, 
+                        {
+                         "name":"friction",
+                         "type":"string",
+                         "value":"1.00"
+                        }],
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -671,18 +715,22 @@
                  "height":96,
                  "id":346,
                  "name":"",
-                 "properties":
-                    {
-                     "bodyType":"static",
-                     "floating":"false",
-                     "friction":"1.00"
-                    },
-                 "propertytypes":
-                    {
-                     "bodyType":"string",
-                     "floating":"string",
-                     "friction":"string"
-                    },
+                 "properties":[
+                        {
+                         "name":"bodyType",
+                         "type":"string",
+                         "value":"static"
+                        }, 
+                        {
+                         "name":"floating",
+                         "type":"string",
+                         "value":"false"
+                        }, 
+                        {
+                         "name":"friction",
+                         "type":"string",
+                         "value":"1.00"
+                        }],
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -695,18 +743,22 @@
                  "height":96,
                  "id":347,
                  "name":"",
-                 "properties":
-                    {
-                     "bodyType":"static",
-                     "floating":"false",
-                     "friction":"1.00"
-                    },
-                 "propertytypes":
-                    {
-                     "bodyType":"string",
-                     "floating":"string",
-                     "friction":"string"
-                    },
+                 "properties":[
+                        {
+                         "name":"bodyType",
+                         "type":"string",
+                         "value":"static"
+                        }, 
+                        {
+                         "name":"floating",
+                         "type":"string",
+                         "value":"false"
+                        }, 
+                        {
+                         "name":"friction",
+                         "type":"string",
+                         "value":"1.00"
+                        }],
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -719,18 +771,22 @@
                  "height":96,
                  "id":348,
                  "name":"",
-                 "properties":
-                    {
-                     "bodyType":"static",
-                     "floating":"false",
-                     "friction":"1.00"
-                    },
-                 "propertytypes":
-                    {
-                     "bodyType":"string",
-                     "floating":"string",
-                     "friction":"string"
-                    },
+                 "properties":[
+                        {
+                         "name":"bodyType",
+                         "type":"string",
+                         "value":"static"
+                        }, 
+                        {
+                         "name":"floating",
+                         "type":"string",
+                         "value":"false"
+                        }, 
+                        {
+                         "name":"friction",
+                         "type":"string",
+                         "value":"1.00"
+                        }],
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -743,18 +799,22 @@
                  "height":96,
                  "id":349,
                  "name":"",
-                 "properties":
-                    {
-                     "bodyType":"static",
-                     "floating":"false",
-                     "friction":"1.00"
-                    },
-                 "propertytypes":
-                    {
-                     "bodyType":"string",
-                     "floating":"string",
-                     "friction":"string"
-                    },
+                 "properties":[
+                        {
+                         "name":"bodyType",
+                         "type":"string",
+                         "value":"static"
+                        }, 
+                        {
+                         "name":"floating",
+                         "type":"string",
+                         "value":"false"
+                        }, 
+                        {
+                         "name":"friction",
+                         "type":"string",
+                         "value":"1.00"
+                        }],
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -767,18 +827,22 @@
                  "height":96,
                  "id":350,
                  "name":"",
-                 "properties":
-                    {
-                     "bodyType":"static",
-                     "floating":"false",
-                     "friction":"1.00"
-                    },
-                 "propertytypes":
-                    {
-                     "bodyType":"string",
-                     "floating":"string",
-                     "friction":"string"
-                    },
+                 "properties":[
+                        {
+                         "name":"bodyType",
+                         "type":"string",
+                         "value":"static"
+                        }, 
+                        {
+                         "name":"floating",
+                         "type":"string",
+                         "value":"false"
+                        }, 
+                        {
+                         "name":"friction",
+                         "type":"string",
+                         "value":"1.00"
+                        }],
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -791,18 +855,22 @@
                  "height":96,
                  "id":351,
                  "name":"",
-                 "properties":
-                    {
-                     "bodyType":"static",
-                     "floating":"false",
-                     "friction":"1.00"
-                    },
-                 "propertytypes":
-                    {
-                     "bodyType":"string",
-                     "floating":"string",
-                     "friction":"string"
-                    },
+                 "properties":[
+                        {
+                         "name":"bodyType",
+                         "type":"string",
+                         "value":"static"
+                        }, 
+                        {
+                         "name":"floating",
+                         "type":"string",
+                         "value":"false"
+                        }, 
+                        {
+                         "name":"friction",
+                         "type":"string",
+                         "value":"1.00"
+                        }],
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -815,18 +883,22 @@
                  "height":96,
                  "id":352,
                  "name":"",
-                 "properties":
-                    {
-                     "bodyType":"static",
-                     "floating":"false",
-                     "friction":"1.00"
-                    },
-                 "propertytypes":
-                    {
-                     "bodyType":"string",
-                     "floating":"string",
-                     "friction":"string"
-                    },
+                 "properties":[
+                        {
+                         "name":"bodyType",
+                         "type":"string",
+                         "value":"static"
+                        }, 
+                        {
+                         "name":"floating",
+                         "type":"string",
+                         "value":"false"
+                        }, 
+                        {
+                         "name":"friction",
+                         "type":"string",
+                         "value":"1.00"
+                        }],
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -851,18 +923,22 @@
                  "height":64,
                  "id":383,
                  "name":"",
-                 "properties":
-                    {
-                     "bodyType":"static",
-                     "floating":"true",
-                     "friction":"1.00"
-                    },
-                 "propertytypes":
-                    {
-                     "bodyType":"string",
-                     "floating":"string",
-                     "friction":"string"
-                    },
+                 "properties":[
+                        {
+                         "name":"bodyType",
+                         "type":"string",
+                         "value":"static"
+                        }, 
+                        {
+                         "name":"floating",
+                         "type":"string",
+                         "value":"true"
+                        }, 
+                        {
+                         "name":"friction",
+                         "type":"string",
+                         "value":"1.00"
+                        }],
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -887,18 +963,22 @@
                  "height":96,
                  "id":385,
                  "name":"",
-                 "properties":
-                    {
-                     "bodyType":"static",
-                     "floating":true,
-                     "friction":"1.00"
-                    },
-                 "propertytypes":
-                    {
-                     "bodyType":"string",
-                     "floating":"bool",
-                     "friction":"string"
-                    },
+                 "properties":[
+                        {
+                         "name":"bodyType",
+                         "type":"string",
+                         "value":"static"
+                        }, 
+                        {
+                         "name":"floating",
+                         "type":"bool",
+                         "value":true
+                        }, 
+                        {
+                         "name":"friction",
+                         "type":"string",
+                         "value":"1.00"
+                        }],
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -911,18 +991,22 @@
                  "height":96,
                  "id":386,
                  "name":"",
-                 "properties":
-                    {
-                     "bodyType":"static",
-                     "floating":true,
-                     "friction":"1.00"
-                    },
-                 "propertytypes":
-                    {
-                     "bodyType":"string",
-                     "floating":"bool",
-                     "friction":"string"
-                    },
+                 "properties":[
+                        {
+                         "name":"bodyType",
+                         "type":"string",
+                         "value":"static"
+                        }, 
+                        {
+                         "name":"floating",
+                         "type":"bool",
+                         "value":true
+                        }, 
+                        {
+                         "name":"friction",
+                         "type":"string",
+                         "value":"1.00"
+                        }],
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -933,13 +1017,12 @@
          "opacity":1,
          "type":"objectgroup",
          "visible":true,
-         "width":80,
          "x":0,
          "y":0
         }, 
         {
          "draworder":"topdown",
-         "height":40,
+         "id":3,
          "name":"castledeco",
          "objects":[
                 {
@@ -1101,13 +1184,12 @@
          "opacity":1,
          "type":"objectgroup",
          "visible":true,
-         "width":80,
          "x":0,
          "y":0
         }, 
         {
          "draworder":"topdown",
-         "height":31,
+         "id":4,
          "name":"shading",
          "objects":[
                 {
@@ -1137,13 +1219,12 @@
          "opacity":0.159999996423721,
          "type":"objectgroup",
          "visible":true,
-         "width":80,
          "x":0,
          "y":0
         }, 
         {
          "draworder":"topdown",
-         "height":31,
+         "id":5,
          "name":"light",
          "objects":[
                 {
@@ -1197,13 +1278,12 @@
          "opacity":0.5,
          "type":"objectgroup",
          "visible":true,
-         "width":80,
          "x":0,
          "y":0
         }, 
         {
          "draworder":"topdown",
-         "height":40,
+         "id":6,
          "name":"game",
          "objects":[
                 {
@@ -1223,18 +1303,22 @@
                  "height":96,
                  "id":111,
                  "name":"block",
-                 "properties":
-                    {
-                     "bodyType":"dynamic",
-                     "density":2,
-                     "friction":0.45
-                    },
-                 "propertytypes":
-                    {
-                     "bodyType":"string",
-                     "density":"float",
-                     "friction":"float"
-                    },
+                 "properties":[
+                        {
+                         "name":"bodyType",
+                         "type":"string",
+                         "value":"dynamic"
+                        }, 
+                        {
+                         "name":"density",
+                         "type":"float",
+                         "value":2
+                        }, 
+                        {
+                         "name":"friction",
+                         "type":"float",
+                         "value":0.45
+                        }],
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -1295,18 +1379,22 @@
                  "height":96,
                  "id":231,
                  "name":"block",
-                 "properties":
-                    {
-                     "bodyType":"dynamic",
-                     "density":2,
-                     "friction":0.45
-                    },
-                 "propertytypes":
-                    {
-                     "bodyType":"string",
-                     "density":"float",
-                     "friction":"float"
-                    },
+                 "properties":[
+                        {
+                         "name":"bodyType",
+                         "type":"string",
+                         "value":"dynamic"
+                        }, 
+                        {
+                         "name":"density",
+                         "type":"float",
+                         "value":2
+                        }, 
+                        {
+                         "name":"friction",
+                         "type":"float",
+                         "value":0.45
+                        }],
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -1317,13 +1405,12 @@
          "opacity":1,
          "type":"objectgroup",
          "visible":true,
-         "width":80,
          "x":0,
          "y":0
         }, 
         {
          "draworder":"topdown",
-         "height":31,
+         "id":7,
          "name":"above",
          "objects":[
                 {
@@ -1377,27 +1464,24 @@
          "opacity":1,
          "type":"objectgroup",
          "visible":true,
-         "width":80,
          "x":0,
          "y":0
         }, 
         {
          "draworder":"topdown",
-         "height":31,
+         "id":8,
          "name":"bounds",
          "objects":[
                 {
                  "height":896,
                  "id":375,
                  "name":"",
-                 "properties":
-                    {
-                     "bodyType":"static"
-                    },
-                 "propertytypes":
-                    {
-                     "bodyType":"string"
-                    },
+                 "properties":[
+                        {
+                         "name":"bodyType",
+                         "type":"string",
+                         "value":"static"
+                        }],
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -1409,14 +1493,12 @@
                  "height":896,
                  "id":376,
                  "name":"",
-                 "properties":
-                    {
-                     "bodyType":"static"
-                    },
-                 "propertytypes":
-                    {
-                     "bodyType":"string"
-                    },
+                 "properties":[
+                        {
+                         "name":"bodyType",
+                         "type":"string",
+                         "value":"static"
+                        }],
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -1428,14 +1510,12 @@
                  "height":288,
                  "id":377,
                  "name":"",
-                 "properties":
-                    {
-                     "bodyType":"static"
-                    },
-                 "propertytypes":
-                    {
-                     "bodyType":"string"
-                    },
+                 "properties":[
+                        {
+                         "name":"bodyType",
+                         "type":"string",
+                         "value":"static"
+                        }],
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -1447,14 +1527,12 @@
                  "height":293.5,
                  "id":378,
                  "name":"",
-                 "properties":
-                    {
-                     "bodyType":"static"
-                    },
-                 "propertytypes":
-                    {
-                     "bodyType":"string"
-                    },
+                 "properties":[
+                        {
+                         "name":"bodyType",
+                         "type":"string",
+                         "value":"static"
+                        }],
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -1465,13 +1543,14 @@
          "opacity":1,
          "type":"objectgroup",
          "visible":false,
-         "width":80,
          "x":0,
          "y":0
         }],
+ "nextlayerid":9,
  "nextobjectid":387,
  "orientation":"orthogonal",
  "renderorder":"right-down",
+ "tiledversion":"1.3.1",
  "tileheight":32,
  "tilesets":[
         {
@@ -1482,260 +1561,383 @@
          "spacing":0,
          "tilecount":62,
          "tileheight":332,
-         "tiles":
-            {
-             "0":
+         "tiles":[
                 {
-                 "image":"alter.png"
-                },
-             "1":
+                 "id":0,
+                 "image":"alter.png",
+                 "imageheight":192,
+                 "imagewidth":160
+                }, 
                 {
-                 "image":"blobBlue.png"
-                },
-             "10":
+                 "id":1,
+                 "image":"blobBlue.png",
+                 "imageheight":64,
+                 "imagewidth":96
+                }, 
                 {
-                 "image":"doorGreenStroke.png"
-                },
-             "11":
+                 "id":2,
+                 "image":"blobGreen.png",
+                 "imageheight":64,
+                 "imagewidth":96
+                }, 
                 {
-                 "image":"doorRedStroked.png"
-                },
-             "12":
+                 "id":3,
+                 "image":"blue.png",
+                 "imageheight":64,
+                 "imagewidth":64
+                }, 
                 {
-                 "image":"doorStroked.png"
-                },
-             "13":
+                 "id":4,
+                 "image":"bombStroked.png",
+                 "imageheight":128,
+                 "imagewidth":96
+                }, 
                 {
-                 "image":"earthWall.png"
-                },
-             "14":
+                 "id":5,
+                 "image":"castleWall.png",
+                 "imageheight":64,
+                 "imagewidth":64
+                }, 
                 {
-                 "image":"exit.png"
-                },
-             "15":
+                 "id":6,
+                 "image":"cloud.png",
+                 "imageheight":128,
+                 "imagewidth":384
+                }, 
                 {
-                 "image":"flare.png"
-                },
-             "16":
+                 "id":7,
+                 "image":"column1.png",
+                 "imageheight":192,
+                 "imagewidth":128
+                }, 
                 {
-                 "image":"gemBlueStroked.png"
-                },
-             "17":
+                 "id":8,
+                 "image":"column2.png",
+                 "imageheight":192,
+                 "imagewidth":128
+                }, 
                 {
-                 "image":"gemRedStroked.png"
-                },
-             "18":
+                 "id":9,
+                 "image":"doorBlueStroked.png",
+                 "imageheight":192,
+                 "imagewidth":160
+                }, 
                 {
-                 "image":"grassLarge.png"
-                },
-             "19":
+                 "id":10,
+                 "image":"doorGreenStroke.png",
+                 "imageheight":192,
+                 "imagewidth":160
+                }, 
                 {
-                 "image":"grassSmall.png"
-                },
-             "2":
+                 "id":11,
+                 "image":"doorRedStroked.png",
+                 "imageheight":192,
+                 "imagewidth":160
+                }, 
                 {
-                 "image":"blobGreen.png"
-                },
-             "20":
+                 "id":12,
+                 "image":"doorStroked.png",
+                 "imageheight":192,
+                 "imagewidth":160
+                }, 
                 {
-                 "image":"grey.png"
-                },
-             "21":
+                 "id":13,
+                 "image":"earthWall.png",
+                 "imageheight":64,
+                 "imagewidth":64
+                }, 
                 {
-                 "image":"hero.png"
-                },
-             "22":
+                 "id":14,
+                 "image":"exit.png",
+                 "imageheight":192,
+                 "imagewidth":160
+                }, 
                 {
-                 "image":"keyGreenStroked.png"
-                },
-             "23":
+                 "id":15,
+                 "image":"flare.png",
+                 "imageheight":192,
+                 "imagewidth":192
+                }, 
                 {
-                 "image":"keyRedStroked.png"
-                },
-             "24":
+                 "id":16,
+                 "image":"gemBlueStroked.png",
+                 "imageheight":64,
+                 "imagewidth":64
+                }, 
                 {
-                 "image":"keyYellowStroked.png"
-                },
-             "25":
+                 "id":17,
+                 "image":"gemRedStroked.png",
+                 "imageheight":64,
+                 "imagewidth":64
+                }, 
                 {
-                 "image":"platform1.png"
-                },
-             "26":
+                 "id":18,
+                 "image":"grassLarge.png",
+                 "imageheight":32,
+                 "imagewidth":224
+                }, 
                 {
-                 "image":"platform2.png"
-                },
-             "27":
+                 "id":19,
+                 "image":"grassSmall.png",
+                 "imageheight":32,
+                 "imagewidth":160
+                }, 
                 {
-                 "image":"platform3.png"
-                },
-             "28":
+                 "id":20,
+                 "image":"grey.png",
+                 "imageheight":64,
+                 "imagewidth":64
+                }, 
                 {
-                 "image":"platform4.png"
-                },
-             "29":
+                 "id":21,
+                 "image":"hero.png",
+                 "imageheight":160,
+                 "imagewidth":128
+                }, 
                 {
-                 "image":"platformBase1.png"
-                },
-             "3":
+                 "id":22,
+                 "image":"keyGreenStroked.png",
+                 "imageheight":64,
+                 "imagewidth":96
+                }, 
                 {
-                 "image":"blue.png"
-                },
-             "30":
+                 "id":23,
+                 "image":"keyRedStroked.png",
+                 "imageheight":64,
+                 "imagewidth":96
+                }, 
                 {
-                 "image":"platformBase2.png"
-                },
-             "31":
+                 "id":24,
+                 "image":"keyYellowStroked.png",
+                 "imageheight":64,
+                 "imagewidth":96
+                }, 
                 {
-                 "image":"platformBase3.png"
-                },
-             "32":
+                 "id":25,
+                 "image":"platform1.png",
+                 "imageheight":64,
+                 "imagewidth":192
+                }, 
                 {
-                 "image":"platformBase4.png"
-                },
-             "33":
+                 "id":26,
+                 "image":"platform2.png",
+                 "imageheight":64,
+                 "imagewidth":192
+                }, 
                 {
-                 "image":"platformBlock1.png"
-                },
-             "34":
+                 "id":27,
+                 "image":"platform3.png",
+                 "imageheight":64,
+                 "imagewidth":192
+                }, 
                 {
-                 "image":"platformBlock2.png"
-                },
-             "35":
+                 "id":28,
+                 "image":"platform4.png",
+                 "imageheight":64,
+                 "imagewidth":192
+                }, 
                 {
-                 "image":"platformBlock3.png"
-                },
-             "36":
+                 "id":29,
+                 "image":"platformBase1.png",
+                 "imageheight":96,
+                 "imagewidth":256
+                }, 
                 {
-                 "image":"platformBlock4.png"
-                },
-             "37":
+                 "id":30,
+                 "image":"platformBase2.png",
+                 "imageheight":96,
+                 "imagewidth":256
+                }, 
                 {
-                 "image":"platformConnector1.png"
-                },
-             "38":
+                 "id":31,
+                 "image":"platformBase3.png",
+                 "imageheight":96,
+                 "imagewidth":256
+                }, 
                 {
-                 "image":"platformConnector2.png"
-                },
-             "39":
+                 "id":32,
+                 "image":"platformBase4.png",
+                 "imageheight":96,
+                 "imagewidth":256
+                }, 
                 {
-                 "image":"platformConnector3.png"
-                },
-             "4":
+                 "id":33,
+                 "image":"platformBlock1.png",
+                 "imageheight":96,
+                 "imagewidth":128
+                }, 
                 {
-                 "image":"bombStroked.png"
-                },
-             "40":
+                 "id":34,
+                 "image":"platformBlock2.png",
+                 "imageheight":96,
+                 "imagewidth":128
+                }, 
                 {
-                 "image":"platformConnector4.png"
-                },
-             "41":
+                 "id":35,
+                 "image":"platformBlock3.png",
+                 "imageheight":96,
+                 "imagewidth":128
+                }, 
                 {
-                 "image":"pushBlock1.png"
-                },
-             "42":
+                 "id":36,
+                 "image":"platformBlock4.png",
+                 "imageheight":96,
+                 "imagewidth":128
+                }, 
                 {
-                 "image":"pushBlock2.png"
-                },
-             "43":
+                 "id":37,
+                 "image":"platformConnector1.png",
+                 "imageheight":64,
+                 "imagewidth":96
+                }, 
                 {
-                 "image":"pushBlock3.png"
-                },
-             "44":
+                 "id":38,
+                 "image":"platformConnector2.png",
+                 "imageheight":64,
+                 "imagewidth":96
+                }, 
                 {
-                 "image":"shadow.png"
-                },
-             "45":
+                 "id":39,
+                 "image":"platformConnector3.png",
+                 "imageheight":64,
+                 "imagewidth":96
+                }, 
                 {
-                 "image":"shieldStroked.png"
-                },
-             "46":
+                 "id":40,
+                 "image":"platformConnector4.png",
+                 "imageheight":64,
+                 "imagewidth":96
+                }, 
                 {
-                 "image":"sign.png"
-                },
-             "48":
+                 "id":41,
+                 "image":"pushBlock1.png",
+                 "imageheight":96,
+                 "imagewidth":96
+                }, 
                 {
-                 "image":"swordStroked.png"
-                },
-             "49":
+                 "id":42,
+                 "image":"pushBlock2.png",
+                 "imageheight":96,
+                 "imagewidth":96
+                }, 
                 {
-                 "image":"torch.png"
-                },
-             "5":
+                 "id":43,
+                 "image":"pushBlock3.png",
+                 "imageheight":96,
+                 "imagewidth":96
+                }, 
                 {
-                 "image":"castleWall.png"
-                },
-             "50":
+                 "id":44,
+                 "image":"shadow.png",
+                 "imageheight":64,
+                 "imagewidth":64
+                }, 
                 {
-                 "image":"trap.png"
-                },
-             "51":
+                 "id":45,
+                 "image":"shieldStroked.png",
+                 "imageheight":93,
+                 "imagewidth":93
+                }, 
                 {
-                 "image":"wallDecor1.png"
-                },
-             "52":
+                 "id":46,
+                 "image":"sign.png",
+                 "imageheight":128,
+                 "imagewidth":160
+                }, 
                 {
-                 "image":"wallDecor2.png"
-                },
-             "53":
+                 "id":48,
+                 "image":"swordStroked.png",
+                 "imageheight":96,
+                 "imagewidth":192
+                }, 
                 {
-                 "image":"wallDecor3.png"
-                },
-             "54":
+                 "id":49,
+                 "image":"torch.png",
+                 "imageheight":96,
+                 "imagewidth":96
+                }, 
                 {
-                 "image":"window1.png"
-                },
-             "55":
+                 "id":50,
+                 "image":"trap.png",
+                 "imageheight":32,
+                 "imagewidth":128
+                }, 
                 {
-                 "image":"window2.png"
-                },
-             "56":
+                 "id":51,
+                 "image":"wallDecor1.png",
+                 "imageheight":96,
+                 "imagewidth":128
+                }, 
                 {
-                 "image":"window3.png"
-                },
-             "57":
+                 "id":52,
+                 "image":"wallDecor2.png",
+                 "imageheight":96,
+                 "imagewidth":128
+                }, 
                 {
-                 "image":"backgroundArch.png"
-                },
-             "58":
+                 "id":53,
+                 "image":"wallDecor3.png",
+                 "imageheight":128,
+                 "imagewidth":160
+                }, 
                 {
-                 "image":"backgroundMountain.png"
-                },
-             "59":
+                 "id":54,
+                 "image":"window1.png",
+                 "imageheight":64,
+                 "imagewidth":65
+                }, 
                 {
-                 "image":"backgroundTower.png"
-                },
-             "6":
+                 "id":55,
+                 "image":"window2.png",
+                 "imageheight":64,
+                 "imagewidth":64
+                }, 
                 {
-                 "image":"cloud.png"
-                },
-             "60":
+                 "id":56,
+                 "image":"window3.png",
+                 "imageheight":59,
+                 "imagewidth":56
+                }, 
                 {
-                 "image":"backgroundTree.png"
-                },
-             "61":
+                 "id":57,
+                 "image":"backgroundArch.png",
+                 "imageheight":115,
+                 "imagewidth":135
+                }, 
                 {
-                 "image":"earthWall2.png"
-                },
-             "62":
+                 "id":58,
+                 "image":"backgroundMountain.png",
+                 "imageheight":140,
+                 "imagewidth":380
+                }, 
                 {
-                 "image":"skeleton.png"
-                },
-             "7":
+                 "id":59,
+                 "image":"backgroundTower.png",
+                 "imageheight":332,
+                 "imagewidth":129
+                }, 
                 {
-                 "image":"column1.png"
-                },
-             "8":
+                 "id":60,
+                 "image":"backgroundTree.png",
+                 "imageheight":177,
+                 "imagewidth":109
+                }, 
                 {
-                 "image":"column2.png"
-                },
-             "9":
+                 "id":61,
+                 "image":"earthWall2.png",
+                 "imageheight":64,
+                 "imagewidth":64
+                }, 
                 {
-                 "image":"doorBlueStroked.png"
-                }
-            },
+                 "id":62,
+                 "image":"skeleton.png",
+                 "imageheight":160,
+                 "imagewidth":133
+                }],
          "tilewidth":384
         }],
  "tilewidth":32,
- "version":1,
+ "type":"map",
+ "version":1.2,
  "width":80
 }
